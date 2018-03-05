@@ -1,7 +1,12 @@
 const fs = require('fs')
 const path = require('path')
 
-const branch = function () {
+/**
+ * Gets the current branch.
+ * 
+ * @returns {string} Branch name
+ */
+function branch () {
   const headpath = path.join(process.cwd(), '.git/HEAD')
   if (!fs.existsSync(headpath)) {
     console.warn('No HEAD found, aborting.')
