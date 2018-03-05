@@ -3,7 +3,7 @@ const path = require('path')
 
 /**
  * Gets the current branch.
- * 
+ *
  * @returns {string} Branch name
  */
 function branch () {
@@ -13,8 +13,9 @@ function branch () {
     return null
   }
   const headcontent = fs.readFileSync(headpath, 'utf8')
-  const branchname = headcontent.split('/').pop()
-  return branchname
+  const branchRegex = /ref: refs\/heads\/(\S+)/
+  const branchname = branchRegex.exec(headcontent)
+  return branchname && branchname[1]
 }
 
 module.exports = branch
