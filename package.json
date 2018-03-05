@@ -1,6 +1,6 @@
 {
   "name": "node-current-branch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gets the current Git branch in Node",
   "main": "get-branch.js",
   "repository": "git@github.com:Dacrol/node-current-branch.git",
